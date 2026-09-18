@@ -56,7 +56,7 @@ if len(DATABASE_URL) == 0:
 
 if DATABASE_URL is not None:
     conn = MongoClient(DATABASE_URL)
-    db = conn.main
+    db = conn.kpsmlx
     old_config = db.settings.deployConfig.find_one({'_id': bot_id})
     config_dict = db.settings.config.find_one({'_id': bot_id})
     if old_config is not None:
@@ -87,7 +87,7 @@ if UPSTREAM_REPO is not None:
 
     update = srun([f"git init -q \
                      && git config --global user.email kpstorrent@gmail.com \
-                     && git config --global user.name kpsbots \
+                     && git config --global user.name Kpsbots \
                      && git add . \
                      && git commit -sm update -q \
                      && git remote add origin {UPSTREAM_REPO} \
