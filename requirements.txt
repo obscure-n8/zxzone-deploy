@@ -46,3 +46,5 @@ urllib3
 
 uvloop
 yt-dlp[default,curl-cffi]
+gevent>=24.10.1
+
